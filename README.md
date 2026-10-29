@@ -84,5 +84,5 @@ before code, small documented decisions, and tests that verify every example.
 
 ## License
 
-To be decided before the first content lands — the plan is an open-source license for the code and a Creative
-Commons license for the content.
+The code is released under the [MIT License](LICENSE). The learning content (the card texts) will be released
+under Creative Commons Attribution 4.0 (CC BY 4.0) once it lands.
