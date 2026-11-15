@@ -1,8 +1,37 @@
+# Python
 __pycache__/
 *.pyc
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
 *.egg-info/
+.venv/
+venv/
+env/
+
+# JavaScript / TypeScript
+node_modules/
+
+# Rust, C, C++ build output
+target/
+*.o
+*.obj
+*.out
+*.exe
+
+# Build, distribution and coverage output
 build/
 dist/
-.venv/
 site/
+coverage/
+htmlcov/
+.coverage
+.coverage.*
+.nyc_output/
+
+# Tool caches and editor files
+.cache/
+.tox/
+.idea/
+.vscode/
+.DS_Store
