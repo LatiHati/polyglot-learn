@@ -1,0 +1,9 @@
+# Source glossary: term -> short definition. Other locales translate the TERM consistently.
+mutable: can be changed after it is created
+immutable: cannot be changed after it is created
+binding: the link between a name and a value
+reference: a way to reach a value without copying it
+"null": a value that means "there is no value"
+exception: an error that interrupts normal flow until something catches it
+closure: a function together with the variables it captured
+garbage collector: the runtime part that frees memory nobody uses

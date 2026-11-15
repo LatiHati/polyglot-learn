@@ -1,0 +1,6 @@
+# Project configuration.
+# source_locale: the locale every card is written in first; other locales are translations of it.
+source_locale: en
+locales:
+  - en
+  - pl

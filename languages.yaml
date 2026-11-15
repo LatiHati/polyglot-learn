@@ -1,0 +1,51 @@
+# How an example in each programming language is run.
+#
+#   source  file name of the example inside cards/<card>/examples/<language>/
+#   local   commands run in a temporary copy of the example directory; the standard output of the LAST
+#           command is compared with expected.txt. Placeholders: {python} = the current interpreter,
+#           {source} = the source file, {out} = a path for a compiled binary.
+#   image   container image used by `polyglot verify --mode docker`
+#   docker  shell command run inside the container, in a read-only mount of the example directory
+
+python:
+  name: Python
+  source: main.py
+  local:
+    - ["{python}", "{source}"]
+  image: python:3.12-slim
+  docker: python main.py
+
+javascript:
+  name: JavaScript
+  source: main.js
+  local:
+    - ["node", "{source}"]
+  image: node:22-slim
+  docker: node main.js
+
+rust:
+  name: Rust
+  source: main.rs
+  local:
+    - ["rustc", "-o", "{out}", "{source}"]
+    - ["{out}"]
+  image: rust:1.82-slim
+  docker: rustc -o /tmp/main main.rs && /tmp/main
+
+c:
+  name: C
+  source: main.c
+  local:
+    - ["gcc", "-std=c17", "-Wall", "-o", "{out}", "{source}"]
+    - ["{out}"]
+  image: gcc:14
+  docker: gcc -std=c17 -Wall -o /tmp/main main.c && /tmp/main
+
+cpp:
+  name: C++
+  source: main.cpp
+  local:
+    - ["g++", "-std=c++20", "-Wall", "-o", "{out}", "{source}"]
+    - ["{out}"]
+  image: gcc:14
+  docker: g++ -std=c++20 -Wall -o /tmp/main main.cpp && /tmp/main

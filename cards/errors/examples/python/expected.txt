@@ -1,0 +1,7 @@
+ok: 42
+checked 42
+error: ValueError
+checked abc
+error: ValueError
+checked -5
+looks like a bad age, but it was a bug

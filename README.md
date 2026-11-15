@@ -6,8 +6,8 @@ Most resources show *how* each language does something. polyglot-learn focuses o
 libraries) solve the same problem differently: the design philosophy, the history, the trade-offs — and what that
 means for you when you choose one.
 
-> Status: **design stage** (October 2026). The design is done; the first content and code are next.
-> No code yet — this README describes what is being built.
+> Status: **early** (November 2026). The tooling works and the first three cards are in: mutability, null and
+> errors, each in Python and JavaScript, in English and Polish. More languages and cards come next.
 
 ## Why another learning resource?
 
@@ -62,10 +62,49 @@ The same characters appear in every language; what changes is how they behave:
 | 3. Run in the browser (optional) | Python (Pyodide), JavaScript natively; other languages show recorded output | later |
 | 4. Illustrations | simple SVG diagrams first, full scenes later | later |
 
-**v1 (proposed scope):** 5 languages from different families — **Python, JavaScript/TypeScript, Go, Rust, C** —
+**v1 (proposed scope):** 5 languages from different families — **Python, JavaScript/TypeScript, Rust, C, C++** —
 about 10 cards from the fundamentals (mutability, types, null, errors, collections, functions and closures,
 memory, modules, concurrency, text and Unicode), 3 characters, a static site and CI that verifies every example.
 Everything else goes to a queue and enters deliberately after v1.
+
+## Quick start
+
+Requires Python 3.10 or newer. Node.js is needed to run the JavaScript examples locally.
+
+```
+pip install -e ".[dev]"
+pytest                    # the test suite
+polyglot validate         # structure of cards, texts and examples
+polyglot verify           # run every example and compare its output with expected.txt
+polyglot stale            # translations that are missing or older than the English source
+polyglot build --out site # generate the static site, then open site/index.html
+```
+
+`polyglot verify` uses the toolchain installed on your machine when there is one and Docker otherwise. An
+example whose language cannot be run is reported as `skipped`, never as passed; `--strict` makes a skip fail.
+
+## Repository layout
+
+```
+cards/<card>/card.yaml              id, order, languages, cast
+cards/<card>/en.md, pl.md           the text per locale (en is the source)
+cards/<card>/examples/<language>/   main.<ext> and expected.txt
+languages.yaml                      how each programming language is run
+cast/characters.yaml                the recurring characters
+glossary/<locale>.yaml              terms, for consistent translation
+src/polyglot/                       loader, validator, verifier, translation tracking, site generator, CLI
+tests/                              pytest suite
+docs/decisions.md                   why things are the way they are
+```
+
+### Adding a card
+
+1. Create `cards/<id>/card.yaml` with a unique `order` and the list of `languages`.
+2. Write `en.md` with front matter (`title`, `summary`) and the four sections `{#why}`, `{#consequences}`,
+   `{#trap}`, `{#challenge}`.
+3. Add `examples/<language>/main.<ext>` and the exact output in `expected.txt` for each language.
+4. Run `polyglot validate` and `polyglot verify`.
+5. Translate: copy the structure to `pl.md`, then `polyglot stamp <id> pl`.
 
 ## Languages of the content
 

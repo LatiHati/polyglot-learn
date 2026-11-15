@@ -1,0 +1,8 @@
+mutable: mutowalny (zmienialny)
+immutable: niemutowalny (niezmienny)
+binding: wiązanie nazwy z wartością
+reference: referencja
+"null": null (brak wartości)
+exception: wyjątek
+closure: domknięcie
+garbage collector: odśmiecacz pamięci (garbage collector)

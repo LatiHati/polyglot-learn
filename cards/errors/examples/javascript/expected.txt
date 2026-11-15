@@ -1,0 +1,8 @@
+ok: 42
+checked 42
+error: RangeError: not a number
+checked abc
+error: RangeError: age cannot be negative
+checked -5
+12
+NaN

@@ -1,0 +1,6 @@
+None
+True
+KeyError: 'email'
+TypeError
+no email
+no value

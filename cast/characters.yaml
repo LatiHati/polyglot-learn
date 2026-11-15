@@ -1,0 +1,27 @@
+# The recurring cast. The same characters appear in every language;
+# what changes is how they behave. Names and roles are localizable, ids are not.
+cleaner:
+  name: { en: The cleaner, pl: Sprzątacz }
+  role:
+    en: The garbage collector. Walks around and throws away what nobody uses any more.
+    pl: Garbage collector. Chodzi po sali i wyrzuca to, czego nikt już nie używa.
+librarian:
+  name: { en: The librarian, pl: Bibliotekarz }
+  role:
+    en: The borrow checker. Tracks who has borrowed which book and for how long.
+    pl: Borrow checker. Pilnuje, kto wypożyczył którą książkę i na jak długo.
+bathroom-key:
+  name: { en: The key to the only bathroom, pl: Klucz do jedynej łazienki }
+  role:
+    en: A mutex. Whoever holds the key is inside; everyone else waits.
+    pl: Mutex. Kto ma klucz, ten jest w środku; reszta czeka.
+waiter:
+  name: { en: One waiter, pl: Jeden kelner }
+  role:
+    en: The event loop. One person serves many tables by never standing still at any of them.
+    pl: Pętla zdarzeń. Jedna osoba obsługuje wiele stolików, bo przy żadnym nie stoi bezczynnie.
+cooks:
+  name: { en: Several cooks, pl: Kilku kucharzy }
+  role:
+    en: Threads. Real parallel work in one kitchen, and real collisions over shared tools.
+    pl: Wątki. Prawdziwa praca równoległa w jednej kuchni i prawdziwe kolizje o wspólne narzędzia.
