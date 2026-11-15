@@ -9,6 +9,18 @@ means for you when you choose one.
 > Status: **early** (November 2026). The tooling works and the first three cards are in: mutability, null and
 > errors, each in Python and JavaScript, in English and Polish. More languages and cards come next.
 
+## Languages: now and later
+
+| Stage | Programming languages |
+|---|---|
+| **In the cards now** (every example verified) | Python, JavaScript |
+| **Configured, examples come next** | Rust, C, C++ |
+| **Planned for later** | TypeScript, Go, Java, R, a Lisp, PHP |
+
+The rest of this README describes the whole plan. Where it names a language from the last two rows (Go's
+garbage collector, Rust's borrow checker, Java, PHP), that is the intended direction, not content that
+exists yet.
+
 ## Why another learning resource?
 
 | Resource | What it gives | What's missing |
